@@ -1,0 +1,171 @@
+:root {
+  --violett: #9e6bff;
+  --pink: #c624ff;
+  --bg-dark: #0f0e17;
+  --text-light: #F5F5F5;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white; /* <-- Weiß gemacht */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--pink);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top left, var(--violett), var(--pink));
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white; /* <-- Weiß gemacht */
+}
+
+.hero span {
+  background: #FFFFFF
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero .btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--pink);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: var(--violett);
+}
+
+.shop {
+  padding: 4rem 2rem;
+  background-color: #1a1a1d;
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--violett);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.discord {
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #1a1a1d, #2a2a2f);
+  text-align: center;
+}
+
+.discord .btn {
+  margin-top: 1rem;
+  background: var(--violett);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.discord .btn:hover {
+  background: var(--pink);
+}
+
+footer {
+  background: #111;
+  padding: 1rem;
+  text-align: center;
+  color: #888;
+}
+
+/* ================================== */
+/* ✅ Neue Sektion: Satisfaction Text */
+/* ================================== */
+.satisfaction {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.satisfaction-text {
+  font-size: 2rem;
+  color: white;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: pop-in 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes pop-in {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KRASSHOP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --violett: #9e6bff;
+      --pink: #c624ff;
+      --bg-dark: #0f0e17;
+      --text-light: #F5F5F5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      background: #111;
+      padding: 1.2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      padding-right: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #111, var(--violett), var(--pink));
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: white;
+      margin-top: -100px;
+    }
+
+    .satisfaction-block {
+      margin-top: 1.5rem;
+      animation: pop-in 1s ease-out forwards;
+      transform: scale(0.5);
+      opacity: 0;
+    }
+
+    .satisfaction-percent {
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: white;
+      margin: 0;
+    }
+
+    .satisfaction-label {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-top: 0.3rem;
+    }
+
+    @keyframes pop-in {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .hero .btn {
+      margin-top: 2rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--pink);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: var(--violett);
+    }
+
+    .transition-bottom {
+      height: 80px;
+      background: linear-gradient(to bottom, var(--pink), #1a1a1d);
+    }
+
+    .shop {
+      padding: 4rem 2rem;
+      background-color: #1a1a1d;
+      text-align: center;
+    }
+
+    .shop h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .products {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .product-card {
+      background: #222;
+      padding: 1rem;
+      border-radius: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px var(--violett);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 0.5rem;
+    }
+
+    .product-card h3 {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .product-card p {
+      margin: 0.3rem 0;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .product-info {
+      font-size: 0.875rem;
+      color: #aaa;
+      margin-top: 0.5rem;
+    }
+
+    .transition-to-footer {
+      height: 80px;
+      background: linear-gradient(to bottom, #1a1a1d, #111);
+    }
+
+    .discord {
+      padding: 4rem 2rem;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .discord h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .discord .btn {
+      background: var(--violett);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .discord .btn:hover {
+      background: var(--pink);
+    }
+
+    footer {
+      background: #111;
+      padding: 1rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">SULANO MARKET</div>
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#shop">SHOP</a></li>
+      <li><a href="#discord">DISCORD</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="hero">
+    <h1>WELCOME TO SULANO MARKET</h1>
+    <div class="satisfaction-block">
+      <div class="satisfaction-percent">100%</div>
+      <div class="satisfaction-label">Customer Satisfaction</div>
+    </div>
+    <a href="#shop" class="btn">Shop Now</a>
+  </section>
+
+  <div class="transition-bottom"></div>
+
+  <section id="shop" class="shop">
+    <h2>Our Products</h2>
+    <div class="products">
+      <div class="product-card">
+        <h3>Uzui Menu</h3>
+        <p>3,99€ - 14,99€</p>
+        <div class="product-info">Open a ticket on our Discord to buy!</div>
+      </div>
+      <div class="product-card">
+        <h3>Sulano Spoofer</h3>
+        <p>9,99€ - 24,99€</p>
+        <div class="product-info">Open a ticket on our Discord to buy!</div>
+      </div>
+      <div class="product-card">
+        <h3>Ocean Menu</h3>
+        <p>7,99€ - 29,99€</p>
+        <div class="product-info">Open a ticket on our Discord to buy!</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="transition-to-footer"></div>
+
+  <section id="discord" class="discord">
+    <h2>Join our Discord</h2>
+    <a href="https://discord.gg/sulano" target="_blank" class="btn">Join Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SULANO MARKET. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
